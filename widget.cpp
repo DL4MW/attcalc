@@ -310,6 +310,66 @@ void Widget::on_shopButton_clicked()
 
 }
 
+void Widget::on_updateCablesButton_clicked()
+{
+    updateCablesButton->setEnabled(false);
+    QNetworkAccessManager *mgr = new QNetworkAccessManager(this);
+    QString baseUrl = "http://dl4mw.net/cable/";
+
+    QNetworkReply *indexReply = mgr->get(QNetworkRequest(QUrl(baseUrl)));
+    connect(indexReply, &QNetworkReply::finished, this, [this, mgr, indexReply, baseUrl]() {
+        indexReply->deleteLater();
+        if (indexReply->error() != QNetworkReply::NoError) {
+            QMessageBox::warning(this, tr("Fehler"),
+                tr("Verbindung fehlgeschlagen: ") + indexReply->errorString());
+            updateCablesButton->setEnabled(true);
+            mgr->deleteLater();
+            return;
+        }
+
+        QString html = QString::fromUtf8(indexReply->readAll());
+        QRegularExpression re(R"(href="([^"]+\.cbl))",
+                              QRegularExpression::CaseInsensitiveOption);
+        QRegularExpressionMatchIterator it = re.globalMatch(html);
+        QStringList files;
+        while (it.hasNext())
+            files << it.next().captured(1);
+
+        if (files.isEmpty()) {
+            QMessageBox::information(this, tr("Update"),
+                tr("Keine Kabeldateien auf dem Server gefunden."));
+            updateCablesButton->setEnabled(true);
+            mgr->deleteLater();
+            return;
+        }
+
+        int *remaining = new int(files.count());
+        for (const QString &href : files) {
+            QUrl fileUrl = QUrl(baseUrl).resolved(QUrl(href));
+            QNetworkReply *fileReply = mgr->get(QNetworkRequest(fileUrl));
+            connect(fileReply, &QNetworkReply::finished, this,
+                    [this, mgr, fileReply, href, remaining]() {
+                fileReply->deleteLater();
+                if (fileReply->error() == QNetworkReply::NoError) {
+                    QString destPath = dirMngr.CreatePath(
+                        QFileInfo(href).fileName(), DIR_DATA1);
+                    QFile f(destPath);
+                    if (f.open(QIODevice::WriteOnly))
+                        f.write(fileReply->readAll());
+                }
+                if (--(*remaining) == 0) {
+                    delete remaining;
+                    mgr->deleteLater();
+                    updateCablesButton->setEnabled(true);
+                    ReadCables();
+                    QMessageBox::information(this, tr("Update"),
+                        tr("Kabelbibliothek wurde aktualisiert."));
+                }
+            });
+        }
+    });
+}
+
 void Widget::on_dataSheetButton_clicked()
 {
 
