@@ -4,6 +4,7 @@
 #include <QtCore>
 #include <QtGui>
 #include <QtWidgets>
+#include <QtNetwork>
 
 #define PORTABLE 1
 
@@ -89,6 +90,7 @@ public slots:
     void on_checkBox60_toggled(){ReadCables();}
     void on_checkBox75_toggled(){ReadCables();}
     void on_checkBoxImp_toggled(){ReadCables();}
+    void on_updateCablesButton_clicked();
 };
 
 class VTable:public QAbstractTableModel{
