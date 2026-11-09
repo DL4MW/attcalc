@@ -1,7 +1,7 @@
 #include <QtCore>
 #include "dirmngr.h"
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 //#define DIR_SEP '\\'
 //weil Qt alles mit Slash macht
 #define DIR_SEP '/'

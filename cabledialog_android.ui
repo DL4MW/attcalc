@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CableDialog</class>
+ <widget class="QDialog" name="CableDialog">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>400</width><height>700</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>Kabel anlegen oder ändern</string>
+  </property>
+  <!-- Outer layout: ScrollArea fills all space, buttons pinned to bottom -->
+  <layout class="QVBoxLayout" name="outerLayout">
+   <property name="spacing"><number>6</number></property>
+   <property name="margin"><number>6</number></property>
+
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable"><bool>true</bool></property>
+     <property name="frameShape"><enum>QFrame::NoFrame</enum></property>
+     <widget class="QWidget" name="scrollContents">
+      <layout class="QVBoxLayout" name="formLayout">
+       <property name="spacing"><number>8</number></property>
+       <property name="margin"><number>4</number></property>
+
+       <!-- Bezeichnung -->
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text"><string>Bezeichnung</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEditName">
+         <property name="minimumHeight"><number>44</number></property>
+        </widget>
+       </item>
+
+       <!-- Hersteller -->
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text"><string>Hersteller</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEditManufacturer">
+         <property name="minimumHeight"><number>44</number></property>
+        </widget>
+       </item>
+
+       <!-- Bezugsquelle -->
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text"><string>Bezugsquelle (Link)</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEditDealer">
+         <property name="minimumHeight"><number>44</number></property>
+        </widget>
+       </item>
+
+       <!-- Datenblatt -->
+       <item>
+        <widget class="QLabel" name="label_14">
+         <property name="text"><string>Datenblatt (Dateiname oder Link)</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEditDataSheet">
+         <property name="minimumHeight"><number>44</number></property>
+        </widget>
+       </item>
+
+       <!-- Durchmesser -->
+       <item>
+        <widget class="QLabel" name="label_12">
+         <property name="text"><string>Durchmesser</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBoxDiameter">
+         <property name="minimumHeight"><number>44</number></property>
+        </widget>
+       </item>
+
+       <!-- Impedanz -->
+       <item>
+        <widget class="QLabel" name="label_13">
+         <property name="text"><string>Impedanz</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBoxImpedance">
+         <property name="minimumHeight"><number>44</number></property>
+        </widget>
+       </item>
+
+       <!-- Bemerkungen -->
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text"><string>Bemerkungen</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="textEditRemarks">
+         <property name="minimumHeight"><number>80</number></property>
+        </widget>
+       </item>
+
+       <!-- Stützstellen-Tabelle -->
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="text"><string>Stützstellen (Frequenz/MHz  –  Dämpfung/dB/100m)</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableView" name="tableView">
+         <property name="minimumHeight"><number>280</number></property>
+        </widget>
+       </item>
+
+       <!-- Koeffizienten -->
+       <item>
+        <widget class="QLabel" name="label_6">
+         <property name="text"><string>D(f) = k1  +  k2·f  +  k3·√f</string></property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="coeffLayout">
+         <item>
+          <widget class="QLabel">
+           <property name="text"><string>k1:</string></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelK1">
+           <property name="frameShape"><enum>QFrame::WinPanel</enum></property>
+           <property name="frameShadow"><enum>QFrame::Sunken</enum></property>
+           <property name="text"><string/></property>
+           <property name="minimumHeight"><number>36</number></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel">
+           <property name="text"><string>k2:</string></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelK2">
+           <property name="frameShape"><enum>QFrame::WinPanel</enum></property>
+           <property name="frameShadow"><enum>QFrame::Sunken</enum></property>
+           <property name="text"><string/></property>
+           <property name="minimumHeight"><number>36</number></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel">
+           <property name="text"><string>k3:</string></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelK3">
+           <property name="frameShape"><enum>QFrame::WinPanel</enum></property>
+           <property name="frameShadow"><enum>QFrame::Sunken</enum></property>
+           <property name="text"><string/></property>
+           <property name="minimumHeight"><number>36</number></property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+
+       <!-- Restfehler -->
+       <item>
+        <layout class="QHBoxLayout" name="errorLayout">
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="text"><string>Restfehler:</string></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelQuality">
+           <property name="frameShape"><enum>QFrame::WinPanel</enum></property>
+           <property name="frameShadow"><enum>QFrame::Sunken</enum></property>
+           <property name="text"><string/></property>
+           <property name="minimumHeight"><number>36</number></property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="text"><string>(typisch kleiner 1)</string></property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+
+      </layout>
+     </widget>
+    </widget>
+   </item>
+
+   <!-- Berechnen-Button und OK/Abbrechen fest am unteren Rand -->
+   <item>
+    <widget class="QPushButton" name="calcButton">
+     <property name="minimumHeight"><number>48</number></property>
+     <property name="text"><string>Berechnen</string></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="minimumHeight"><number>48</number></property>
+     <property name="orientation"><enum>Qt::Horizontal</enum></property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender><signal>accepted()</signal>
+   <receiver>CableDialog</receiver><slot>accept()</slot>
+   <hints><hint type="sourcelabel"><x>248</x><y>680</y></hint><hint type="destinationlabel"><x>157</x><y>690</y></hint></hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender><signal>rejected()</signal>
+   <receiver>CableDialog</receiver><slot>reject()</slot>
+   <hints><hint type="sourcelabel"><x>316</x><y>680</y></hint><hint type="destinationlabel"><x>286</x><y>690</y></hint></hints>
+  </connection>
+ </connections>
+</ui>

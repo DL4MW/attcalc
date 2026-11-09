@@ -6,269 +6,60 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>766</width>
-    <height>461</height>
+    <width>373</width>
+    <height>627</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>DL4MW - Dämpfungsrechner</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="3" rowspan="2" colspan="2">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>Länge / m</string>
-     </property>
+  <layout class="QGridLayout" name="gridLayout" columnstretch="0,1,0">
+   <property name="margin" stdset="0">
+    <number>10</number>
+   </property>
+   <property name="spacing">
+    <number>8</number>
+   </property>
+   <item row="11" column="1" colspan="2">
+    <widget class="QComboBox" name="comboBoxLang">
+     <item>
+      <property name="text">
+       <string>wählen...</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>deutsch/german</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>english</string>
+      </property>
+     </item>
     </widget>
    </item>
-   <item row="8" column="0" colspan="6">
-    <widget class="QGroupBox" name="groupBoxFilter">
-     <property name="title">
-      <string>Filter</string>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-     <property name="checked">
-      <bool>false</bool>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_3">
-      <item row="1" column="1">
-       <widget class="QCheckBox" name="checkBoxSemiRigid">
-        <property name="text">
-         <string>Semi-rigid</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QCheckBox" name="checkBox3mm">
-        <property name="text">
-         <string>&lt;=3mm</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="4">
-       <widget class="QCheckBox" name="checkBoxImp">
-        <property name="text">
-         <string>andere</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="4">
-       <widget class="QCheckBox" name="checkBox7mm">
-        <property name="text">
-         <string>7mm</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_12">
-        <property name="text">
-         <string>Durchmesser</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="1">
-       <widget class="QCheckBox" name="checkBox50">
-        <property name="text">
-         <string>50 Ohm</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="3">
-       <widget class="QCheckBox" name="checkBox75">
-        <property name="text">
-         <string>75 Ohm</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="6">
-       <widget class="QCheckBox" name="checkBox15mm">
-        <property name="text">
-         <string>&gt;=11mm</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="0">
-       <widget class="QLabel" name="label_13">
-        <property name="text">
-         <string>Impedanz</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="2">
-       <widget class="QCheckBox" name="checkBox60">
-        <property name="text">
-         <string>60 Ohm</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="3">
-       <widget class="QCheckBox" name="checkBox5mm">
-        <property name="text">
-         <string>5mm</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="5">
-       <widget class="QCheckBox" name="checkBox10mm">
-        <property name="text">
-         <string>10mm</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="0" column="5">
+   <item row="4" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Dämpfung/dB</string>
+      <string>Dämpfung / dB</string>
      </property>
     </widget>
    </item>
-   <item row="10" column="0">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="1" column="5" rowspan="3">
-    <widget class="QLabel" name="resultLabel">
-     <property name="font">
-      <font>
-       <pointsize>14</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::WinPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Sunken</enum>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0" rowspan="2">
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>Band</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="2">
-    <widget class="QDoubleSpinBox" name="spinBoxF">
-     <property name="decimals">
-      <number>3</number>
-     </property>
-     <property name="maximum">
-      <double>100000.000000000000000</double>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="label_11">
-     <property name="text">
-      <string>ausgewählter Kabeltyp:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="2" rowspan="2">
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>f / MHz</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="3">
-    <widget class="QDoubleSpinBox" name="spinBoxL">
-     <property name="decimals">
-      <number>3</number>
-     </property>
-     <property name="maximum">
-      <double>10000.000000000000000</double>
-     </property>
-     <property name="value">
-      <double>100.000000000000000</double>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="6" rowspan="14">
-    <widget class="QListWidget" name="cableView">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-       <horstretch>100</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>200</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="sortingEnabled">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0" colspan="6">
+   <item row="8" column="0" colspan="3">
     <widget class="QGroupBox" name="groupBox">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>50</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
      <property name="title">
       <string>Beispielrechnung zur Leistungsübertragung</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="1">
-       <widget class="QLabel" name="label_9">
-        <property name="text">
-         <string>Transceiver (out):</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QLabel" name="label_10">
-        <property name="text">
-         <string>an der Antenne</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
+      <item row="0" column="0">
        <widget class="QLabel" name="label_8">
         <property name="text">
          <string>Leistung (z.B. in W):</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
+      <item row="0" column="1">
        <widget class="QSpinBox" name="spinBoxPower">
         <property name="maximum">
          <number>100000</number>
@@ -278,33 +69,52 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="2">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>→ an der Antenne:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
        <widget class="QLabel" name="powerLabel">
         <property name="font">
          <font>
           <pointsize>14</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
          </font>
         </property>
         <property name="frameShape">
-         <enum>QFrame::WinPanel</enum>
+         <enum>QFrame::Shape::WinPanel</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Sunken</enum>
+         <enum>QFrame::Shadow::Sunken</enum>
         </property>
         <property name="text">
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
         </property>
        </widget>
       </item>
      </layout>
     </widget>
    </item>
-   <item row="9" column="0" colspan="6">
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Band</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>Kabeltyp:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="3">
     <widget class="QLabel" name="warnLabel">
      <property name="palette">
       <palette>
@@ -345,133 +155,140 @@
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
      <property name="text">
       <string>Achtung, die gewählte Frequenz liegt weit außerhalb der verfügbaren Kabeldaten.
-Das Ergebnis wird wahrscheinlich ungenau sein. </string>
+Das Ergebnis wird wahrscheinlich ungenau sein.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
-   <item row="11" column="4" colspan="2">
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>f / MHz</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="3">
     <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
-      <string>Sprache:</string>
+      <string>Koaxialkabel-Dämpfungsrechner, v3.0
+by DL4MW, 2026 </string>
      </property>
     </widget>
    </item>
-   <item row="6" column="2">
-    <widget class="QPushButton" name="dataSheetButton">
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>Datenblatt</string>
+      <string>Länge / m</string>
      </property>
     </widget>
    </item>
-   <item row="12" column="0">
-    <widget class="QPushButton" name="newButton">
+   <item row="5" column="0" colspan="3">
+    <widget class="QPushButton" name="selectCableButton">
      <property name="text">
-      <string>Neu</string>
+      <string>Kabel wählen / verwalten...</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="6">
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Kabeltyp:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="13" column="0">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="14" column="0">
+   <item row="11" column="0">
     <widget class="QPushButton" name="webButton">
      <property name="text">
       <string>Webseite öffnen</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
-    <widget class="QComboBox" name="comboBoxBand"/>
-   </item>
-   <item row="12" column="4" colspan="2">
-    <widget class="QComboBox" name="comboBoxLang">
-     <item>
-      <property name="text">
-       <string>wählen...</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>deutsch/german</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>english</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="6" column="1">
-    <widget class="QPushButton" name="shopButton">
+   <item row="10" column="1">
+    <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>Shop / Preis</string>
+      <string>Language / Sprache:</string>
      </property>
     </widget>
    </item>
-   <item row="5" column="1" colspan="5">
-    <widget class="QLabel" name="cableLabel">
-     <property name="minimumSize">
+   <item row="9" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
       <size>
-       <width>0</width>
-       <height>25</height>
+       <width>20</width>
+       <height>20</height>
       </size>
      </property>
+    </spacer>
+   </item>
+   <item row="4" column="1" colspan="2">
+    <widget class="QLabel" name="resultLabel">
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="frameShape">
-      <enum>QFrame::WinPanel</enum>
+      <enum>QFrame::Shape::WinPanel</enum>
      </property>
      <property name="frameShadow">
-      <enum>QFrame::Sunken</enum>
+      <enum>QFrame::Shadow::Sunken</enum>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1" colspan="2">
+    <widget class="QLabel" name="cableLabel">
+     <property name="frameShape">
+      <enum>QFrame::Shape::WinPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Sunken</enum>
      </property>
      <property name="text">
       <string/>
      </property>
     </widget>
    </item>
-   <item row="12" column="1">
-    <widget class="QPushButton" name="changeButton">
-     <property name="text">
-      <string>Ändern / Ansehen</string>
+   <item row="3" column="1" colspan="2">
+    <widget class="QDoubleSpinBox" name="spinBoxL">
+     <property name="decimals">
+      <number>3</number>
+     </property>
+     <property name="maximum">
+      <double>10000.000000000000000</double>
+     </property>
+     <property name="value">
+      <double>100.000000000000000</double>
      </property>
     </widget>
    </item>
-   <item row="12" column="2">
-    <widget class="QPushButton" name="updateCablesButton">
-     <property name="text">
-      <string>Kabel aktualisieren</string>
+   <item row="2" column="1" colspan="2">
+    <widget class="QDoubleSpinBox" name="spinBoxF">
+     <property name="decimals">
+      <number>3</number>
+     </property>
+     <property name="maximum">
+      <double>100000.000000000000000</double>
      </property>
     </widget>
    </item>
-   <item row="14" column="1" colspan="2">
-    <widget class="QLabel" name="label_7">
-     <property name="text">
-      <string>Updates, spezielle Kabelpakete und die Anleitung:
-http://schueler.ws/?page_id=237</string>
-     </property>
-    </widget>
+   <item row="1" column="1" colspan="2">
+    <widget class="QComboBox" name="comboBoxBand"/>
    </item>
   </layout>
  </widget>
@@ -480,7 +297,7 @@ http://schueler.ws/?page_id=237</string>
   <tabstop>spinBoxF</tabstop>
   <tabstop>spinBoxL</tabstop>
   <tabstop>comboBoxBand</tabstop>
-  <tabstop>newButton</tabstop>
+  <tabstop>selectCableButton</tabstop>
   <tabstop>comboBoxLang</tabstop>
  </tabstops>
  <resources/>

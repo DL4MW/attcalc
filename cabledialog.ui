@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>369</width>
     <height>577</height>
    </rect>
   </property>
@@ -49,10 +49,10 @@
    <item row="10" column="1">
     <widget class="QLabel" name="labelQuality">
      <property name="frameShape">
-      <enum>QFrame::WinPanel</enum>
+      <enum>QFrame::Shape::WinPanel</enum>
      </property>
      <property name="frameShadow">
-      <enum>QFrame::Sunken</enum>
+      <enum>QFrame::Shadow::Sunken</enum>
      </property>
      <property name="text">
       <string/>
@@ -92,10 +92,10 @@
    <item row="8" column="1">
     <widget class="QLabel" name="labelK1">
      <property name="frameShape">
-      <enum>QFrame::WinPanel</enum>
+      <enum>QFrame::Shape::WinPanel</enum>
      </property>
      <property name="frameShadow">
-      <enum>QFrame::Sunken</enum>
+      <enum>QFrame::Shadow::Sunken</enum>
      </property>
      <property name="text">
       <string/>
@@ -108,10 +108,10 @@
    <item row="9" column="1">
     <widget class="QLabel" name="labelK3">
      <property name="frameShape">
-      <enum>QFrame::WinPanel</enum>
+      <enum>QFrame::Shape::WinPanel</enum>
      </property>
      <property name="frameShadow">
-      <enum>QFrame::Sunken</enum>
+      <enum>QFrame::Shadow::Sunken</enum>
      </property>
      <property name="text">
       <string/>
@@ -121,10 +121,10 @@
    <item row="8" column="3">
     <widget class="QLabel" name="labelK2">
      <property name="frameShape">
-      <enum>QFrame::WinPanel</enum>
+      <enum>QFrame::Shape::WinPanel</enum>
      </property>
      <property name="frameShadow">
-      <enum>QFrame::Sunken</enum>
+      <enum>QFrame::Shadow::Sunken</enum>
      </property>
      <property name="text">
       <string/>
@@ -168,10 +168,10 @@
    <item row="12" column="0" colspan="5">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
      <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
      </property>
     </widget>
    </item>

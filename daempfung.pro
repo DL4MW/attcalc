@@ -15,14 +15,29 @@ SOURCES += main.cpp\
         dirmngr.cpp\
         simplex.cpp\
         widget.cpp\
+        cableselect.cpp\
         lmcurve.c\
         lmmin.c
 
-HEADERS  += widget.h
+HEADERS  += widget.h \
+    cableselect.h
 
 FORMS    += widget.ui \
-    cabledialog.ui
+    cableselect.ui \
+    filterdialog.ui
 
-TRANSLATIONS = english.ts 
+android {
+    FORMS += cabledialog_android.ui
+} else {
+    FORMS += cabledialog.ui
+}
+
+TRANSLATIONS = english.ts
+
+RESOURCES += coaxatt.qrc
 
 win32::RC_FILE = coaxatt.rc
+
+android {
+    ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+}
